@@ -30,7 +30,7 @@ something just like this
 周杰倫 夜曲
 ```
 
-## Options
+## Options (WIP)
 See ```python3 run.py --help```
 
 ## Author
