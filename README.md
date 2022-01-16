@@ -2,9 +2,12 @@
 <p>
 </p>
 
-> Simple script to download mp3 in the list, only supports MacOS currently
+### Simple script to download mp3 in the list, only supports MacOS currently
+
 
 ## Installation
+
+### Install package
 ```sh
 pip3 install youtube-search-python requests
 ```
@@ -18,6 +21,13 @@ brew install ffmpeg
 
 ```sh
 python3 run.py <path_of_list>
+```
+
+where list is a plain list of songs separated by line breaks, e.g.
+```
+shallow
+something just like this
+周杰倫 夜曲
 ```
 
 ## Options
