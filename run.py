@@ -3,9 +3,11 @@ from youtubesearchpython import VideosSearch
 import dl
 import argparse
 import os
+from pprint import pprint
 
 def work(keywords):
 
+    result = {}
     for key in keywords:
         try:
             videosSearch = VideosSearch(key).result()['result'][0]
@@ -17,10 +19,13 @@ def work(keywords):
             print(key, title, id)
             try:
                 dl.download(id)
+                result[title] = 'SUCCESS'
             except:
                 print('Download fail')
+                result[title] = 'FAIL'
         else:
             print('Search {} fail'.format(key))
+    return result
 
 def main():
     parser = argparse.ArgumentParser()
@@ -34,10 +39,21 @@ def main():
     if not os.path.exists(args.output_dir):
         raise RuntimeError('OutputDir does not exists')
 
+    args.input = os.path.abspath(args.input)
+    cwd = os.getcwd()
+
+    # Switch to output_dir
+    os.chdir(args.output_dir)
+
     with open(args.input, 'r') as f:
         keywords = f.read().splitlines()
         keywords = filter(lambda x: x, keywords)
-        work(keywords)
+        result = work(keywords)
+        print('====== Summary =====')
+        pprint(result)
+        print('====================')
+    
+    os.chdir(cwd)
 
 if __name__ == '__main__':
     main()

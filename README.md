@@ -12,7 +12,7 @@
 pip3 install youtube-search-python requests
 ```
 
-### Install ffmpeg for webm to mp3
+### Install ffmpeg for converting webm to mp3
 ```sh
 brew install ffmpeg
 ```
@@ -20,14 +20,14 @@ brew install ffmpeg
 ## Usage
 
 ```sh
-python3 run.py <path_of_list>
+python3 run.py example/mylist.txt
 ```
 
 where list is a plain list of songs separated by line breaks, e.g.
 ```
 shallow
 something just like this
-周杰倫 夜曲
+正想著你呢 官方
 ```
 
 ## Options (WIP)
