@@ -12,7 +12,7 @@
 pip3 install youtube-search-python requests
 ```
 
-### Install ppmpeg for webm to mp3
+### Install ffmpeg for webm to mp3
 ```sh
 brew install ffmpeg
 ```
